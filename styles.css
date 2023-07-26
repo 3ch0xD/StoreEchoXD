@@ -88,7 +88,7 @@ body {
   padding: 0;
   white-space: nowrap;
   animation: ticker-scroll 17s linear infinite;
-  font-family: boom;
+  font-family: Boom;
 }
 
 .ticker-content li {
@@ -144,7 +144,7 @@ body {
   /* Adjust the font size to make it bigger */
   position: absolute;
   display: inline-block;
-  font-family: boom;
+  font-family: Boom;
 }
 
 .products-ticker-content li {
@@ -212,7 +212,7 @@ a {
 }
 
 .allproductsbtn {
-  font-family: boom;
+  font-family: Boom;
 }
 
 .allproductsbtn:hover {
@@ -246,7 +246,7 @@ a {
   /* Adjust the font size to make it bigger */
   position: absolute;
   display: inline-block;
-  font-family: boom;
+  font-family: Boom;
 }
 
 .contact-ticker-content li {
@@ -330,7 +330,7 @@ button{
 .allbtn a{
   background-color: #00ccff;
   color: #EDEDED;
-  font-family: BOOM;
+  font-family: Boom;
   padding: 4PX 5PX;
   margin-top: 50PX ;
   border-radius: 2PX;
