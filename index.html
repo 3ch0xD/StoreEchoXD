@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StoreEchoXD</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+</head>
+<body>
+  <div class="header">
+    <img src="Images/store.echoxd.png" alt="Logo" class="img">
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+      <i class='bx bx-menu'></i>
+    </a>
+
+    <nav class="nav-bar" id="navigation-bar"> <!-- Add the "collapsed" class to hide the navigation links initially -->
+      <a href="#">HOME</a>
+      <a href="/products/all/">PRODUCTS</a>
+      <a href="/contact">CONTACT</a>
+      <!-- Add more navigation links as needed -->
+    </nav>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="/products/all/">PRODUCTS</a>
+      <a href="/contact">CONTACT</a>
+    </nav>
+  </div>
+
+  <div class="ticker-container">
+    <ul class="ticker-content" id="ticker">
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <li>Just Opened</li>
+      <!-- Add more news items here -->
+    </ul>
+  </div>
+
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slides">
+        <img src="Images/portrait-bearded-smiling-male-with-crossed-arms-isolated-white-background.jpg">
+        <img src="Images/image1.png">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="products-ticker" id="Featured">
+    <ul class="products-ticker-content" id="pticker">
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+      <li>🔥 Featured Products 🔥</li>
+    </ul>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <a href="#">
+        <img src="/Images/product1.png" alt="Product 1">
+        <h3>200</h3>
+        <p>$199</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="#">
+        <img src="Images/product1.png" alt="Product 2">
+        <h3>Example Product</h3>
+        <p>$100</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="#">
+        <img src="Images/product1.png" alt="Product 2">
+        <h3>Example Product</h3>
+        <p>$100</p>
+      </a>
+    </div>
+    <div class="product-card">
+      <a href="#">
+      <img src="Images/product1.png" alt="Product 2">
+      <h3>Example Product</h3>
+      <p>$100</p>
+    </a>
+    </div>
+  </div>
+
+  <div class="allbtn">
+    <a href="/products/all/">More..</a>
+  </div>
+
+
+  <div class="contact-ticker">
+    <ul class="contact-ticker-content" id="cticker">
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <li>All You Need</li>
+      <!-- Add more contact info here -->
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="email">
+    <form  method="post" action="https://formsubmit.co/storeechoxd@gmail.com" class="form">
+      <label for="email">Subscribe To Our Email</label><br>
+      <input class="sube" name="email" required type="email" placeholder="Enter Your Email...">
+      <button type="submit" class="btn"><i class='bx bx-right-arrow-alt'></i></button>
+
+      <input type="hidden" name="_next" value="https://store.3ch0xd.me?EMAIL-SENT">
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
+  <div class="links">
+    <h1>Quick Links</h1>
+    <a href="#" class="ql">Home</a>
+    <a href="#Featured" class="ql">Featured</a>
+    <a href="/products/all/" class="ql">All Products</a>
+    <a href="/contact" class="ql">Contact</a>
+  </div>
+  </div>
+
+
+  <script src="script.js"></script>
+  <script src="ticker2.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+
+      productCards.forEach((productCard) => {
+        const buyNowButton = document.createElement('button');
+        const product = productCard.querySelector('h3').textContent;
+        const price = productCard.querySelector('p').textContent;
+
+        buyNowButton.classList.add('buy-now');
+        buyNowButton.textContent = 'Buy Now';
+        buyNowButton.addEventListener('click', function () {
+          const checkoutUrl = `/checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+          window.open(checkoutUrl, '_blank');
+        });
+
+        productCard.appendChild(buyNowButton);
+      });
+    });
+
+
+    function onMenuClick() {
+    var navbar = document.getElementById("navigation-bar");
+    var responsive_class_name = "responsive";
+
+    navbar.classList.toggle(responsive_class_name);
+}
+
+
+</script>
+
+</body>
+</html>

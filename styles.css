@@ -1,0 +1,382 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  border-radius: 20px;
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* Ensure the slider container takes up the full width */
+}
+
+.slider {
+  max-width: 1000px;
+  /* Set your desired maximum width */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  /* Add display flex */
+}
+
+.slides {
+  flex-grow: 1;
+  /* Use flex-grow to make the slides fill the available space */
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Ensure the images fill the container without distortion */
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.header .img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.header nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  font-family: aaa;
+}
+
+.ticker-container {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  background-color: #00ccff;
+  border-top: #000 solid 2px;
+  border-bottom: #000 solid 2px;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.ticker-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  animation: ticker-scroll 17s linear infinite;
+  font-family: boom;
+}
+
+.ticker-content li {
+  display: inline;
+  padding: 0 20px;
+}
+
+@font-face {
+  font-family: aaa;
+  src: url(fonts/Cobe-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Boom;
+  src: url(/fonts/BoomerTantrum-j88y.ttf);
+}
+
+.ed {
+  padding-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1400px;
+  border: transparent 1px solid;
+  border-radius: 20px;
+  background-color: #F0F0F0;
+}
+
+
+.products-ticker {
+  width: 100%;
+  height: 80px;
+  /* Adjust the height to make it bigger */
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  /* Transparent background */
+  border-top: 2px solid #333;
+  /* Top border */
+  border-bottom: 2px solid #333;
+  /* Bottom border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-ticker-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 36px;
+  /* Adjust the font size to make it bigger */
+  position: absolute;
+  display: inline-block;
+  font-family: boom;
+}
+
+.products-ticker-content li {
+  display: inline;
+  padding: 0 20px;
+  position: relative;
+}
+
+
+.product-grid {
+  display: flex;
+  /* Use flexbox for the grid layout */
+  flex-wrap: wrap;
+  /* Allow the products to wrap to the next row */
+  justify-content: center;
+  /* Center the products horizontally */
+}
+
+.product-card {
+  width: 250px;
+  /* Set a fixed width for each product card */
+  margin: 10px;
+  /* Add some spacing between product cards */
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.product-card h3 {
+  font-family: product;
+  margin: 0;
+  padding: 0;
+}
+
+.product-card p {
+  color: #ccc;
+  font-family: desc;
+  margin: 5px 0;
+}
+
+.product-card:hover {
+  box-shadow: #00000048 3px 0px 20px;
+}
+
+@font-face {
+  font-family: product;
+  src: url(fonts/Belfast\ Grotesk\ Semi\ Bold\ Oblique.ttf);
+}
+
+@font-face {
+  font-family: desc;
+  src: url(fonts/Belfast\ Grotesk\ Semi\ Bold.ttf);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.allproductsbtn {
+  font-family: boom;
+}
+
+.allproductsbtn:hover {
+  background-color: #00aeda;
+}
+
+.contact-ticker {
+  margin-top: 20px;
+  width: 100%;
+  height: 80px;
+  /* Adjust the height to make it bigger */
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  /* Transparent background */
+  border-top: 2px solid #333;
+  /* Top border */
+  border-bottom: 2px solid #333;
+  /* Bottom border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-ticker-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 36px;
+  /* Adjust the font size to make it bigger */
+  position: absolute;
+  display: inline-block;
+  font-family: boom;
+}
+
+.contact-ticker-content li {
+  display: inline;
+  padding: 0 20px;
+  position: relative;
+}
+
+.footer {
+  display: flex;
+  border: 1px solid #000;
+  padding: 50px 100px;
+  border-top: none;
+}
+
+.email {
+  flex: 1;
+  width: 32%;
+  display: inline-flex;
+}
+
+label {
+  font-family: Product;
+  font-size: 32px;
+}
+
+.email input {
+  width: 80%;
+  height: 40px;
+  flex-grow:2;
+  border-right: none;
+  border:1px solid #000;
+}
+
+.email input:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: #00b6e4;
+  color: #fff;
+  width: 40px;
+  height: 38%;
+  border: none;
+  border-radius: 0px;
+}
+
+h1 {
+  font-family: product;
+}
+
+.ql {
+  font-family: desc;
+  color: #525252;
+  padding-right: 10px;
+}
+
+input::placeholder {
+  font-family: desc;
+
+}
+
+
+
+
+button{
+  background-color: #00ccff;
+  border: none;
+  color: #def7ff;
+  padding: 5px 5px;
+  border-radius: 10px;
+  font-family: desc;
+}
+
+.allbtn
+{
+  display: flex;
+  justify-content: center;
+}
+
+.allbtn a{
+  background-color: #00ccff;
+  color: #EDEDED;
+  font-family: BOOM;
+  padding: 4PX 5PX;
+  margin-top: 50PX ;
+  border-radius: 2PX;
+}
+
+.menu-icon {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+
+button{
+  background-color: #00ccff;
+}
+
+@media (max-width: 1100px) {
+
+  nav{
+    display: none;
+  }
+  .nav-bar.responsive {
+    display: flex;
+    position: sticky;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0 0px 30px #0000006b;
+  }
+
+  .nav-bar a {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 1;
+  }
+
+  button {
+    padding: 0.4rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .product-card{
+    width: 80%;
+  }
+}

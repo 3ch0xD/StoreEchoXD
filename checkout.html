@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout Page</title>
+  <!-- Add your CSS styles here -->
+  <link rel="stylesheet" href="checkout.css">
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+</head>
+<body>
+
+  <div class="contact-ticker">
+    <ul class="contact-ticker-content" id="cticker">
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <li>Checkout</li>
+      <!-- Add more contact info here -->
+    </ul>
+  </div>
+
+  <div class="checkout">
+  
+  <form method="post" action="https://formsubmit.co/storeechoxd@gmail.com">
+    <label for="product">Product:</label><br>
+    <input type="text" id="product" name="product" readonly required><br>
+    
+    <label for="price">Price:</label><br>
+    <input type="text" id="price" name="price" readonly required><br>
+
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" required><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="number" name="phone" required><br>
+
+    <label for="payment">Payment Method</label><br>
+    <select id="payment" name="payment">
+      <option value="bank-transfer">Bank Transfer</option>
+      <option value="easypaisa">EasyPaisa</option>
+      <option value="jazzcash">Jazz Cash</option>
+    </select><br>
+    
+    <!-- MODIFICATIONS FOR FORM  -->
+    <input type="hidden" name="_next" value="https://store.3ch0xd.me/Thankyou/">
+    <input type="hidden" name="_captcha" value="false">
+
+    
+    <!-- Add other input fields for email, name, phone number, etc. -->
+    
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const product = urlParams.get('product');
+      const price = urlParams.get('price');
+      
+      // Fill the input fields with the obtained product and price values
+      document.getElementById('product').value = product || '';
+      document.getElementById('price').value = price || '';
+    });
+
+    const ctickerContent = document.getElementById('cticker');
+const ctickerItem = ctickerContent.querySelector('li');
+const ctickerContainer = document.querySelector('.contact-ticker');
+
+const ctickerItemWidth = ctickerItem.offsetWidth;
+const ctickerContainerWidth = ctickerContainer.offsetWidth;
+
+// Duplicate the ticker item content
+ctickerContent.innerHTML += ctickerContent.innerHTML;
+
+// Set initial position of ticker
+let ctickerPosition = 0;
+
+function animateContactTicker() {
+  ctickerPosition += 1; // Adjust this value to control the scrolling speed
+  if (ctickerPosition >= ctickerItemWidth) {
+    ctickerPosition = 0;
+  }
+
+  ctickerContent.style.transform = `translateX(-${ctickerPosition}px)`;
+
+  requestAnimationFrame(animateContactTicker);
+}
+
+// Start the animation
+animateContactTicker();
+  </script>
+</body>
+</html>
