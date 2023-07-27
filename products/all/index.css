@@ -158,3 +158,48 @@
     border-radius: 10px;
     font-family: desc;
   }
+
+  .sbtn{
+    background-color: #00ccff;
+    border: none;
+    color: #def7ff;
+    padding: 5px 5px;
+    border-radius: 0;
+    font-size: 15px;
+    font-family: desc;
+  }
+
+  .search-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  #searchInput {
+    padding-right: 35px; /* Add space for the button */
+  }
+
+  .sbtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-left: none;
+  }
+
+  input{
+    background-color: white;
+    border: 1px solid #000;
+    height: 30px;
+    width: 300px;
+    font-family: aaa;
+  }
+
+  input:focus{
+    outline: none;
+  }
+
+  input::placeholder{
+    font-family: desc;
+  }

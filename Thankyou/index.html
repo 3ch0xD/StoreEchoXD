@@ -1,35 +1,116 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-	<title>Order Sucessfully Placed!</title>
-	<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
-	<style>
-		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
-		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-	</style>
-	<!-- <link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css"> -->
-	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
-	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
-	<link rel="icon" type="image/x-icon" href="/Images/favicon.png">
-</head>
-<body>
-	<header class="site-header" id="header">
-		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
-	</header>
 
-	<div class="main-content">
-		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-		<p class="main-content__body" data-lead-id="main-content-body">Thanks a bunch for ordering, your order will be fulfilled as soon as possible, the maximum time is 24hrs, if your order is not complete till then please contact us!</p>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/fonts.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+	<div class="contact-ticker">
+		<ul class="contact-ticker-content" id="cticker">
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<li>Thankyou</li>
+			<!-- Add more contact info here -->
+		</ul>
 	</div>
 
-    <a href="https://shop.3ch0xd.me/">Continue Shopping <i class='bx bx-cart'></i></a>
+	<div class="info">
+		<div class="tick">
+			<i id="Hi" class='bx bxs-check-circle'></i>
+		</div>
+		<p>Your order was sucessfully placed! The maximum time the order can take to get to you is 48hours if your order
+			is
+			still pending after 48hours please contact us.</p>
+	</div>
 
-	<footer class="site-footer" id="footer">
-		<p class="site-footer__fineprint" id="fineprint">Copyright ©2023 | All Rights Reserved</p>
-	</footer>
+	<div class="instructions">
+		<div class="bt">
+			<span>For Bank Transfer:</span><br>Transfer the money into the account number and send the screenshot to +92
+			3002946303 on whatsapp: <br><input readonly type="text" value="03118165069">
+		</div>
+		<div class="ep">
+			<span>For Easypaisa:</span><br>Transfer the money into the account number and send the screenshot to +92
+			3002946303 on whatsapp: <br><input readonly type="text" value="03002946303">
+		</div>
+		<div class="jc">
+			<span>For Jazzcash:</span><br>Transfer the money into the account number and send the screenshot to +92
+			3002946303 on whatsapp: <br><input readonly type="text" value="03002946303">
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+		const ctickerContent = document.getElementById('cticker');
+		const ctickerItem = ctickerContent.querySelector('li');
+		const ctickerContainer = document.querySelector('.contact-ticker');
+
+		const ctickerItemWidth = ctickerItem.offsetWidth;
+		const ctickerContainerWidth = ctickerContainer.offsetWidth;
+
+		// Duplicate the ticker item content
+		ctickerContent.innerHTML += ctickerContent.innerHTML;
+
+		// Set initial position of ticker
+		let ctickerPosition = 0;
+
+		function animateContactTicker() {
+			ctickerPosition += 1; // Adjust this value to control the scrolling speed
+			if (ctickerPosition >= ctickerItemWidth) {
+				ctickerPosition = 0;
+			}
+
+			ctickerContent.style.transform = `translateX(-${ctickerPosition}px)`;
+
+			requestAnimationFrame(animateContactTicker);
+		}
+
+		// Start the animation
+		animateContactTicker();
+
+		document.getElementById('payment').addEventListener('change', function () {
+			var instructions = document.getElementById('payment-instructions');
+			switch (this.value) {
+				case 'bank-transfer':
+					instructions.textContent = 'You need to transfer the money to account number 000000000000000.';
+					break;
+				case 'easypaisa':
+					instructions.textContent = 'You need to transfer the money to EasyPaisa account number 000000000000000.';
+					break;
+				case 'jazzcash':
+					instructions.textContent = 'You need to transfer the money to Jazz Cash account number 000000000000000.';
+					break;
+				default:
+					instructions.textContent = '';
+			}
+		});
+
+	</script>
 </body>
+
 </html>

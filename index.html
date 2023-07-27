@@ -34,7 +34,6 @@
       <a href="/contact">CONTACT</a>
     </nav>
   </div>
-
   <div class="ticker-container">
     <ul class="ticker-content" id="ticker">
       <li>Just Opened</li>
@@ -192,6 +191,28 @@
 }
 
 
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('searchInput');
+
+      function searchProducts() {
+        const searchTerm = searchInput.value.trim();
+        window.location.href = `/products/all?search=${encodeURIComponent(searchTerm)}`;
+      }
+
+      // Associate the searchProducts function with the search button click event
+      const searchButton = document.querySelector('.search-button');
+      searchButton.addEventListener('click', searchProducts);
+
+      // Associate the searchProducts function with the 'keydown' event on the search input field
+      searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          searchProducts();
+        }
+      });
+    });
 </script>
 
 </body>

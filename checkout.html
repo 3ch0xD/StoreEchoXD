@@ -45,22 +45,24 @@
     <input type="number" name="phone" required><br>
 
     <label for="payment">Payment Method</label><br>
-    <select id="payment" name="payment">
+    <select id="payment" name="payment" required>
+      <option value="" hidden disabled selected >Select Payment Method</option>
       <option value="bank-transfer">Bank Transfer</option>
       <option value="easypaisa">EasyPaisa</option>
       <option value="jazzcash">Jazz Cash</option>
     </select><br>
     
     <!-- MODIFICATIONS FOR FORM  -->
-    <input type="hidden" name="_next" value="https://store.3ch0xd.me/Thankyou/">
+    <input type="hidden" name="_next" value="https://echoxd.store/Thankyou/">
     <input type="hidden" name="_captcha" value="false">
 
     
     <!-- Add other input fields for email, name, phone number, etc. -->
     
-    <button type="submit">Submit</button>
+    <button type="submit" onclick="validateSelection()">Submit</button>
   </form>
 </div>
+<p id="payment-instructions"></p>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -99,6 +101,42 @@ function animateContactTicker() {
 
 // Start the animation
 animateContactTicker();
+
+document.getElementById('payment').addEventListener('change', function() {
+  var instructions = document.getElementById('payment-instructions');
+  switch(this.value) {
+    case 'bank-transfer':
+      instructions.textContent = 'You need to transfer the money to account number 03118165069 and send the screenshot at +9203002946303.';
+      break;
+    case 'easypaisa':
+      instructions.textContent = 'You need to transfer the money to EasyPaisa account number 03002946303 and send the screenshot at +9203002946303.';
+      break;
+    case 'jazzcash':
+      instructions.textContent = 'You need to transfer the money to Jazz Cash account number 03002946303 and send the screenshot at +9203002946303.';
+      break;
+    default:
+      instructions.textContent = '';
+  }
+});
+
+function validateSelection() {
+      const selectField = document.getElementById("mySelect");
+      const selectedOption = selectField.value;
+
+      if (selectedOption === "" || selectField.selectedIndex === 0) {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = "Please select a valid option.";
+        return false; // Prevent form submission
+      } else {
+        // Perform your desired action when a valid option is selected
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = ""; // Clear any previous error messages
+        alert("You selected: " + selectedOption);
+        // Add additional code here, e.g., form submission or other logic
+        return true; // Allow form submission
+      }
+    }
+
   </script>
 </body>
 </html>

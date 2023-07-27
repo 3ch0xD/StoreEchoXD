@@ -4,17 +4,22 @@
   <title>StoreEchoXD | Products</title>
   <link rel="stylesheet" href="index.css">
   <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="header">
         <img src="/Images/store.echoxd.png" alt="Logo" class="img">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search by product title...">
+          <button class="search-button" onclick="searchProducts()">Search</button>
+        </div>
       </div>
 
       <div class="product-grid">
         <div class="product-card">
           <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>a</h3>
             <p>$100</p>
           </a>
         </div>
@@ -22,7 +27,7 @@
         <div class="product-card">
           <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>b</h3>
             <p>$100</p>
           </a>
         </div>
@@ -30,14 +35,14 @@
         <div class="product-card">
           <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>c</h3>
             <p>$100</p>
           </a>
         </div>
         <div class="product-card">
           <a href="#">
           <img src="/Images/product1.png" alt="Product 2">
-          <h3>Example Product</h3>
+          <h3>d</h3>
           <p>$100</p>
         </a>
         </div>
@@ -45,7 +50,7 @@
         <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>e</h3>
               <p>$100</p>
             </a>
           </div>
@@ -53,7 +58,7 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>f</h3>
               <p>$100</p>
             </a>
           </div>
@@ -61,14 +66,14 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>g</h3>
               <p>$100</p>
             </a>
           </div>
           <div class="product-card">
             <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>i</h3>
             <p>$100</p>
           </a>
           </div>
@@ -76,7 +81,7 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>j</h3>
               <p>$100</p>
             </a>
           </div>
@@ -84,7 +89,7 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>k</h3>
               <p>$100</p>
             </a>
           </div>
@@ -92,14 +97,14 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>l</h3>
               <p>$100</p>
             </a>
           </div>
           <div class="product-card">
             <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>m</h3>
             <p>$100</p>
           </a>
           </div>
@@ -107,7 +112,7 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>n</h3>
               <p>$100</p>
             </a>
           </div>
@@ -115,7 +120,7 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>o</h3>
               <p>$100</p>
             </a>
           </div>
@@ -123,14 +128,14 @@
           <div class="product-card">
             <a href="#">
               <img src="/Images/product1.png" alt="Product 2">
-              <h3>Example Product</h3>
+              <h3>p</h3>
               <p>$100</p>
             </a>
           </div>
           <div class="product-card">
             <a href="#">
             <img src="/Images/product1.png" alt="Product 2">
-            <h3>Example Product</h3>
+            <h3>q</h3>
             <p>$100</p>
           </a>
           </div>
@@ -156,6 +161,51 @@
 
         productCard.appendChild(buyNowButton);
       });
+    });
+
+   
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+      const searchInput = document.getElementById('searchInput');
+
+      function filterProducts(searchTerm) {
+        productCards.forEach((productCard) => {
+          const productTitle = productCard.querySelector('h3').textContent.toLowerCase();
+          if (productTitle.includes(searchTerm.toLowerCase())) {
+            productCard.style.display = 'block';
+          } else {
+            productCard.style.display = 'none';
+          }
+        });
+      }
+
+      function searchProducts() {
+        const searchTerm = searchInput.value.trim();
+        filterProducts(searchTerm);
+      }
+
+      // Initial display of all products
+      filterProducts('');
+
+      // Associate the searchProducts function with the search button click event
+      const searchButton = document.querySelector('.search-button');
+      searchButton.addEventListener('click', searchProducts);
+
+      // Associate the searchProducts function with the 'keydown' event on the search input field
+      searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          searchProducts();
+        }
+      });
+
+      // Extract and execute search term from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search');
+      if (searchParam !== null) {
+        searchInput.value = decodeURIComponent(searchParam);
+        filterProducts(searchParam.trim());
+      }
     });
 
   </script>

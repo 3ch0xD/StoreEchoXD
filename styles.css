@@ -380,3 +380,22 @@ button{
     width: 80%;
   }
 }
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+#searchInput {
+  padding-right: 35px; /* Add space for the button */
+}
+
+.sbtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-left: none;
+}
