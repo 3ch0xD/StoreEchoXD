@@ -1,0 +1,19 @@
+@font-face {
+    font-family: aaa;
+    src: url(/fonts/Cobe-SemiBold.ttf);
+  }
+  
+  @font-face {
+    font-family: Boom;
+    src: url(/fonts/BoomerTantrum-j88y.ttf);
+  }
+
+  @font-face {
+    font-family: product;
+    src: url(/fonts/Belfast\ Grotesk\ Semi\ Bold\ Oblique.ttf);
+  }
+  
+  @font-face {
+    font-family: desc;
+    src: url(/fonts/Belfast\ Grotesk\ Semi\ Bold.ttf);
+  }
