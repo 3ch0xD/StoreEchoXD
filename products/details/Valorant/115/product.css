@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main-content{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+.main-content img{
+    float: left;
+    margin-right: 30px;
+}
+
+.main-content h1{
+    font-size: 30px;
+    font-family: Desc;
+}
+
+.main-content p{
+    font-family: aaa;
+}
+
+.p2{
+    font-family:product ;
+    color: #a0a0a0;
+}
+
+button{
+    background-color: #00ccff;
+    border: none;
+    color: #def7ff;
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-family: desc;
+    margin: 10px 0;
+  }

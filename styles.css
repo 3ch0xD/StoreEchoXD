@@ -14,21 +14,21 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  /* Ensure the slider container takes up the full width */
+ 
 }
 
 .slider {
   max-width: 1000px;
-  /* Set your desired maximum width */
+ 
   width: 100%;
   overflow: hidden;
   display: flex;
-  /* Add display flex */
+ 
 }
 
 .slides {
   flex-grow: 1;
-  /* Use flex-grow to make the slides fill the available space */
+ 
   display: flex;
   transition: transform 0.5s ease;
 }
@@ -37,7 +37,7 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  /* Ensure the images fill the container without distortion */
+ 
 }
 
 .header {
@@ -79,6 +79,7 @@ body {
   font-size: 12px;
   align-items: center;
   margin-bottom: 20px;
+  z-index: -1000;
 
 }
 
@@ -121,15 +122,15 @@ body {
 .products-ticker {
   width: 100%;
   height: 80px;
-  /* Adjust the height to make it bigger */
+ 
   overflow: hidden;
   position: relative;
   background-color: transparent;
-  /* Transparent background */
+ 
   border-top: 2px solid #333;
-  /* Top border */
+ 
   border-bottom: 2px solid #333;
-  /* Bottom border */
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +142,7 @@ body {
   padding: 0;
   white-space: nowrap;
   font-size: 36px;
-  /* Adjust the font size to make it bigger */
+ 
   position: absolute;
   display: inline-block;
   font-family: Boom;
@@ -156,18 +157,18 @@ body {
 
 .product-grid {
   display: flex;
-  /* Use flexbox for the grid layout */
+ 
   flex-wrap: wrap;
-  /* Allow the products to wrap to the next row */
+ 
   justify-content: center;
-  /* Center the products horizontally */
+ 
 }
 
 .product-card {
   width: 250px;
-  /* Set a fixed width for each product card */
+ 
   margin: 10px;
-  /* Add some spacing between product cards */
+ 
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -223,15 +224,15 @@ a {
   margin-top: 20px;
   width: 100%;
   height: 80px;
-  /* Adjust the height to make it bigger */
+ 
   overflow: hidden;
   position: relative;
   background-color: transparent;
-  /* Transparent background */
+ 
   border-top: 2px solid #333;
-  /* Top border */
+ 
   border-bottom: 2px solid #333;
-  /* Bottom border */
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +244,7 @@ a {
   padding: 0;
   white-space: nowrap;
   font-size: 36px;
-  /* Adjust the font size to make it bigger */
+ 
   position: absolute;
   display: inline-block;
   font-family: Boom;
@@ -348,10 +349,6 @@ button{
 }
 
 @media (max-width: 1100px) {
-
-  nav{
-    display: none;
-  }
   .nav-bar.responsive {
     display: flex;
     position: sticky;
@@ -361,33 +358,41 @@ button{
   }
 
   .nav-bar a {
-    display: block;
+    display: none;
   }
-
-  .menu-icon {
-    display: block;
-    z-index: 1;
-  }
-
   button {
     padding: 0.4rem;
   }
   .logo {
     font-size: 1.4rem;
   }
-
-  .product-card{
-    width: 80%;
-  }
 }
 
 .search-container {
   position: relative;
   display: inline-block;
+  background-color: #f1f1f1;
+  width: 100%;
 }
 
 #searchInput {
-  padding-right: 35px; /* Add space for the button */
+  padding-right: 35px;
+}
+
+.input2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 1px solid #000;
+  height: 40px;
+  font-family: aaa;
+  border-radius: 50px;
+
+}
+
+.input2:focus{
+  outline: none;
 }
 
 .sbtn {
@@ -398,4 +403,184 @@ button{
   padding: 5px 10px;
   border: 1px solid #000;
   border-left: none;
+}
+
+.category-button {
+  position: relative;
+  float: right;
+  z-index: 2;
+}
+
+.expand-button {
+  padding: 10px;
+  background-color: #008cff;
+  border: none;
+  cursor: pointer;
+}
+
+.category-list {
+  font-family: aaa;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.sub-links {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 300%;
+}
+
+.category:hover .sub-links {
+  display: block;
+}
+
+.sub-links a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.sub-links a:hover {
+  background-color: #f0f0f0;
+}
+
+.bticker-container {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  background-color: #ff0077;
+  border-top: #000 solid 2px;
+  border-bottom: #000 solid 2px;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: -1000;
+  margin-top: 20px;
+
+}
+
+.bticker-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  animation: ticker-scroll 17s linear infinite;
+  font-family: Boom;
+}
+
+.bticker-content li {
+  display: inline;
+  padding: 0 20px;
+}
+
+.bselling-grid {
+  display: flex;
+ 
+  flex-wrap: wrap;
+ 
+  justify-content: center;
+ 
+}
+
+.bselling-card {
+  width: 300px;
+ 
+  margin: 10px;
+ 
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.bselling-card img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 10px;
+  transition: transform .2s;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.bselling-card img:hover{
+  transform: scale(1.1)
+}
+
+.footerSecondary{
+  padding: 50px 50px;
+}
+
+.support{
+  text-align: center;
+  font-family: Boom;
+}
+
+.support .ss{
+  font-weight: 90;
+}
+
+.heading-support{
+  font-family: Product;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.trust{
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.trust .customers{
+  padding: 10px 10px;
+  border: #00ccff 1px solid;
+  float: left;
+}
+
+.trust .livesupport{
+  border: #00ccff 1px solid;
+  padding: 10px 10px;
+  float: left;
+}
+
+.trust .deliverytime{
+  border: #00ccff 1px solid;
+  padding: 10px 10px;
+  float: left;
+}
+
+.customers1{
+  font-family: Boom;
+  color: #00ccff;
+}
+
+.customers1 i{
+  color: black;
+  font-size: 40px;
 }

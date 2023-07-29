@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StoreEchoXD | Products</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="header">
+        <img src="/Images/store.echoxd.png" alt="Logo" class="img">
+        <div class="category-button">
+          <button class="expand-button" onclick="toggleCategories()">Categories &#9662;</button>
+          <div class="category-list">
+            <ul>
+              <li class="category">Top-Ups
+                <div class="sub-links">
+                  <a href="/products/Category/Top-Ups/Fortnite/">Fortnite</a>
+                  <a href="/products/Category/Top-Ups/Valorant/">Valorant</a>
+                  <a href="/products/Category/Top-Ups/PUBG/">PUBG</a>
+                </div>
+              </li>
+              <li class="category">Subscriptions
+                <div class="sub-links">
+                  <a href="/products/Category/Subscriptions/DiscordNitro/">Discord Nitro</a>
+                  <a href="/products/Category/Subscriptions/DiscordNitroClassic/">Discord Nitro Classic</a>
+                  <a href="/products/Category/Subscriptions/Netflix/">Netflix</a>
+                </div>
+              </li>
+              <!-- Add more categories with their respective sub-links as needed -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="product-grid">
+        <div class="product-card">
+          <a href="/products/details/DiscordNitro/Classic/">
+          <img src="/Images/NitroClassic.png" alt="Product 2">
+          <h3>Discord Nitro Classic 1month | Login Required</h3>
+          <p>Pkr. 1200</p>
+        </a>
+        </div>
+      </div>
+
+  <script>
+
+      // Add this script after your existing scripts
+  document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+
+      productCards.forEach((productCard) => {
+        const buyNowButton = document.createElement('button');
+        const product = productCard.querySelector('h3').textContent;
+        const price = productCard.querySelector('p').textContent;
+
+        buyNowButton.classList.add('buy-now');
+        buyNowButton.textContent = 'Buy Now';
+        buyNowButton.addEventListener('click', function () {
+          const checkoutUrl = `/checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+          window.open(checkoutUrl, '_blank');
+        });
+
+        productCard.appendChild(buyNowButton);
+      });
+    });
+
+   
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+      const searchInput = document.getElementById('searchInput');
+
+      function filterProducts(searchTerm) {
+        productCards.forEach((productCard) => {
+          const productTitle = productCard.querySelector('h3').textContent.toLowerCase();
+          if (productTitle.includes(searchTerm.toLowerCase())) {
+            productCard.style.display = 'block';
+          } else {
+            productCard.style.display = 'none';
+          }
+        });
+      }
+
+      function searchProducts() {
+        const searchTerm = searchInput.value.trim();
+        filterProducts(searchTerm);
+      }
+
+      // Initial display of all products
+      filterProducts('');
+
+      // Associate the searchProducts function with the search button click event
+      const searchButton = document.querySelector('.sbtn');
+      searchButton.addEventListener('click', searchProducts);
+
+      // Associate the searchProducts function with the 'keydown' event on the search input field
+      searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          searchProducts();
+        }
+      });
+
+      // Extract and execute search term from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search');
+      if (searchParam !== null) {
+        searchInput.value = decodeURIComponent(searchParam);
+        filterProducts(searchParam.trim());
+      }
+    });
+
+    function toggleCategories() {
+  const categoryList = document.querySelector(".category-list");
+  categoryList.style.display = categoryList.style.display === "block" ? "none" : "block";
+}
+
+
+
+  </script>
+  <script src="/ticker3.js"></script>
+  </body>
+  </html>

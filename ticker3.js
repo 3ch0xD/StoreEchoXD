@@ -5,14 +5,14 @@ const ctickerContainer = document.querySelector('.contact-ticker');
 const ctickerItemWidth = ctickerItem.offsetWidth;
 const ctickerContainerWidth = ctickerContainer.offsetWidth;
 
-// Duplicate the ticker item content
+
 ctickerContent.innerHTML += ctickerContent.innerHTML;
 
-// Set initial position of ticker
+
 let ctickerPosition = 0;
 
 function animateContactTicker() {
-  ctickerPosition += 1; // Adjust this value to control the scrolling speed
+  ctickerPosition += 1; 
   if (ctickerPosition >= ctickerItemWidth) {
     ctickerPosition = 0;
   }
@@ -22,7 +22,7 @@ function animateContactTicker() {
   requestAnimationFrame(animateContactTicker);
 }
 
-// Start the animation
+
 animateContactTicker();
 
 

@@ -2,16 +2,16 @@ const tickerContent = document.getElementById('ticker');
 const tickerItems = tickerContent.getElementsByTagName('li');
 const itemWidth = tickerItems[0].offsetWidth;
 let translateValue = 0;
-const scrollSpeed = 1; // Increase this value to make the scrolling faster
+const scrollSpeed = 1; 
 
-// Duplicate the ticker items to create a seamless loop
+
 tickerContent.innerHTML += tickerContent.innerHTML;
 
 function scrollTicker() {
-  translateValue -= scrollSpeed; // Increase the scrolling speed
+  translateValue -= scrollSpeed; 
   tickerContent.style.transform = `translateX(${translateValue}px)`;
 
-  // Reset the translateValue when reaching the end of the loop
+  
   if (Math.abs(translateValue) >= itemWidth * tickerItems.length) {
     translateValue = 0;
   }
@@ -22,58 +22,52 @@ function scrollTicker() {
 scrollTicker();
 
 
-// w
+
 
 const slides = document.querySelector(".slides");
 const images = document.querySelectorAll(".slides img");
 
-// Set initial slide index
+
 let currentSlideIndex = 0;
 
-// Function to move the slides
+
 function slideTo(index) {
   const slideWidth = images[0].clientWidth;
   slides.style.transform = `translateX(${-index * slideWidth}px)`;
 }
 
-// Function to handle the automatic sliding
+
 function startAutoSlide() {
   setInterval(() => {
     currentSlideIndex = (currentSlideIndex + 1) % images.length;
     slideTo(currentSlideIndex);
-  }, 5000); // Change image every 3 seconds (adjust as needed)
+  }, 5000); 
 }
 
-// Call the function to start the automatic sliding
+
 startAutoSlide();
 
+const tickerContent1 = document.getElementById('ticker1');
+const tickerItems1 = tickerContent1.getElementsByTagName('li');
+const itemWidth1 = tickerItems1[0].offsetWidth;
+let translateValue1 = 0;
+const scrollSpeed1 = 1; 
 
-// const ptickerContent = document.getElementById('pticker');
-// const ptickerItem = ptickerContent.querySelector('li');
-// const ptickerContainer = document.querySelector('.products-ticker');
+tickerContent1.innerHTML += tickerContent1.innerHTML;
 
-// const ptickerItemWidth = ptickerItem.offsetWidth;
-// const ptickerContainerWidth = ptickerContainer.offsetWidth;
+function scrollTicker1() {
+  translateValue1 -= scrollSpeed1;
+  tickerContent1.style.transform = `translateX(${translateValue1}px)`;
 
-// // Duplicate the ticker item content
-// ptickerContent.innerHTML += ptickerContent.innerHTML;
+  if (Math.abs(translateValue1) >= itemWidth1 * tickerItems1.length) {
+    translateValue1 = 0;
+  }
 
-// // Set initial position of ticker
-// let ptickerPosition = 0;
+  requestAnimationFrame(scrollTicker1);
+}
 
-// function animateProductsTicker() {
-//   ptickerPosition -= 1; // Adjust this value to control the scrolling speed
-//   if (ptickerPosition <= -ptickerItemWidth) {
-//     ptickerPosition += ptickerItemWidth;
-//   }
+scrollTicker1();
 
-//   ptickerContent.style.transform = `translateX(${ptickerPosition}px)`;
-
-//   requestAnimationFrame(animateProductsTicker);
-// }
-
-// // Start the animation
-// animateProductsTicker();
 
 
 

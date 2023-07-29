@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | EchoXD.Store</title>
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+    <!-- STYLESHEET  -->
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="/fonts.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <img src="/Images/Pubg300uc.png" height="500px">
+        <h1>Pubg 300</h1>
+        <p>Pubg 300 Uc Fast Delivery, Affordable.</p>
+            <p2 class="p2">Pkr. 1100</p2><br>
+    </div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.main-content');
+
+      productCards.forEach((productCard) => {
+        const buyNowButton = document.createElement('button');
+        const product = productCard.querySelector('h1').textContent;
+        const price = productCard.querySelector('p2').textContent;
+
+        buyNowButton.classList.add('buy-now');
+        buyNowButton.textContent = 'Buy Now';
+        buyNowButton.addEventListener('click', function () {
+          const checkoutUrl = `/checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+          window.open(checkoutUrl, '_blank');
+        });
+
+        productCard.appendChild(buyNowButton);
+      });
+    });
+    </script>
+</body>
+</html>

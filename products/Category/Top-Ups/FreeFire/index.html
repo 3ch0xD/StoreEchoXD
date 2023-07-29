@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | StoreEchoXD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/fonts.css">
+</head>
+<body>
+    <div class="contact-ticker">
+        <ul class="contact-ticker-content" id="cticker">
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <li>Coming Soon</li>
+          <!-- Add more contact info here -->
+        </ul>
+      </div>
+      
+      <script>
+        const ctickerContent = document.getElementById('cticker');
+const ctickerItem = ctickerContent.querySelector('li');
+const ctickerContainer = document.querySelector('.contact-ticker');
+
+const ctickerItemWidth = ctickerItem.offsetWidth;
+const ctickerContainerWidth = ctickerContainer.offsetWidth;
+
+
+ctickerContent.innerHTML += ctickerContent.innerHTML;
+
+
+let ctickerPosition = 0;
+
+function animateContactTicker() {
+  ctickerPosition += 1; 
+  if (ctickerPosition >= ctickerItemWidth) {
+    ctickerPosition = 0;
+  }
+
+  ctickerContent.style.transform = `translateX(-${ctickerPosition}px)`;
+
+  requestAnimationFrame(animateContactTicker);
+}
+
+
+animateContactTicker();
+
+
+
+      </script>
+</body>
+</html>

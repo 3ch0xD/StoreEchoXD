@@ -1,0 +1,40 @@
+.contact-ticker {
+    margin-top: 20px;
+    width: 100%;
+    height: 80px;
+   
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+   
+    border-top: 2px solid #333;
+   
+    border-bottom: 2px solid #333;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-ticker-content {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 36px;
+   
+    position: absolute;
+    display: inline-block;
+    font-family: Boom;
+  }
+  
+  .contact-ticker-content li {
+    display: inline;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+  }

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StoreEchoXD | Products</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="header">
+        <img src="/Images/store.echoxd.png" alt="Logo" class="img">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search by product title...">
+          <button class="sbtn" onclick="searchProducts()"><i class='bx bx-search'></i></button>
+        </div>
+        <div class="category-button">
+          <button class="expand-button" onclick="toggleCategories()">Categories &#9662;</button>
+          <div class="category-list">
+            <ul>
+              <li class="category">Top-Ups
+                <div class="sub-links">
+                  <a href="/products/Category/Top-Ups/Fortnite/">Fortnite</a>
+                  <a href="/products/Category/Top-Ups/Valorant/">Valorant</a>
+                  <a href="/products/Category/Top-Ups/PUBG/">PUBG</a>
+                </div>
+              </li>
+              <li class="category">Subscriptions
+                <div class="sub-links">
+                  <a href="/products/Category/Subscriptions/DiscordNitro/">Discord Nitro</a>
+                  <a href="/products/Category/Subscriptions/DiscordNitroClassic/">Discord Nitro Classic</a>
+                  <a href="/products/Category/Subscriptions/Netflix/">Netflix</a>
+                </div>
+              </li>
+              <!-- Add more categories with their respective sub-links as needed -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="product-grid">
+        <div class="product-card">
+          <a href="/products/details/Valorant/115/">
+            <img src="/Images/VP115.png" alt="Product 2">
+            <h3>Valorant Points 115 Turkish Region | Email Delivery | VP</h3>
+            <p>Pkr. 270</p>
+          </a>
+        </div>
+    
+        <div class="product-card">
+          <a href="/products/details/Valorant/485/">
+            <img src="/Images/VP485.png" alt="Product 2">
+            <h3>Valorant Points 485 Turkish Region | Email Delivery | VP</h3>
+            <p>Pkr. 770</p>
+          </a>
+        </div>
+    
+        <div class="product-card">
+          <a href="/products/details/Valorant/925/">
+            <img src="/Images/VP925.png" alt="Product 2">
+            <h3>Valorant Points 925 Turkish Region | Email Delivery | VP</h3>
+            <p>Pkr. 1330</p>
+          </a>
+        </div>
+        <div class="product-card">
+          <a href="/products/details/Valorant/1040/">
+          <img src="/Images/VP1040.png" alt="Product 2">
+          <h3>Valorant Points 1040 Turkish Region | Email Delivery | VP</h3>
+          <p>Pkr. 1500</p>
+        </a>
+        </div>
+
+        <div class="product-card">
+            <a href="/products/details/Valorant/1410/">
+              <img src="/Images/VP1410.png" alt="Product 2">
+              <h3>Valorant Points 1410 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 2000</p>
+            </a>
+          </div>
+      
+          <div class="product-card">
+            <a href="/products/details/Valorant/1850/">
+              <img src="/Images/VP1850.png" alt="Product 2">
+              <h3>Valorant Points 1850 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 2530</p>
+            </a>
+          </div>
+      
+          <div class="product-card">
+            <a href="/products/details/Valorant/2195/">
+              <img src="/Images/VP2195.png" alt="Product 2">
+              <h3>Valorant Points 2195 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 3040</p>
+            </a>
+          </div>
+          <div class="product-card">
+            <a href="/products/details/Valorant/2775/">
+            <img src="/Images/VP2775.png" alt="Product 2">
+            <h3>Valorant Points 2775 Turkish Region | Email Delivery | VP</h3>
+            <p>Pkr. 3760</p>
+          </a>
+          </div>
+
+          <div class="product-card">
+            <a href="/products/details/Valorant/3400/">
+              <img src="/Images/VP3400.png" alt="Product 2">
+              <h3>Valorant Points 3400 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 4300</p>
+            </a>
+          </div>
+      
+          <div class="product-card">
+            <a href="/products/details/Valorant/4325/">
+              <img src="/Images/VP4325.png" alt="Product 2">
+              <h3>Valorant Points 4325 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 5530</p>
+            </a>
+          </div>
+      
+          <div class="product-card">
+            <a href="/products/details/Valorant/5500/">
+              <img src="/Images/VP5550.png" alt="Product 2">
+              <h3>Valorant Points 5500 Turkish Region | Email Delivery | VP</h3>
+              <p>Pkr. 6700</p>
+            </a>
+          </div>
+      </div>
+
+  <script>
+
+      // Add this script after your existing scripts
+  document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+
+      productCards.forEach((productCard) => {
+        const buyNowButton = document.createElement('button');
+        const product = productCard.querySelector('h3').textContent;
+        const price = productCard.querySelector('p').textContent;
+
+        buyNowButton.classList.add('buy-now');
+        buyNowButton.textContent = 'Buy Now';
+        buyNowButton.addEventListener('click', function () {
+          const checkoutUrl = `/checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+          window.open(checkoutUrl, '_blank');
+        });
+
+        productCard.appendChild(buyNowButton);
+      });
+    });
+
+   
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.product-card');
+      const searchInput = document.getElementById('searchInput');
+
+      function filterProducts(searchTerm) {
+        productCards.forEach((productCard) => {
+          const productTitle = productCard.querySelector('h3').textContent.toLowerCase();
+          if (productTitle.includes(searchTerm.toLowerCase())) {
+            productCard.style.display = 'block';
+          } else {
+            productCard.style.display = 'none';
+          }
+        });
+      }
+
+      function searchProducts() {
+        const searchTerm = searchInput.value.trim();
+        filterProducts(searchTerm);
+      }
+
+      // Initial display of all products
+      filterProducts('');
+
+      // Associate the searchProducts function with the search button click event
+      const searchButton = document.querySelector('.sbtn');
+      searchButton.addEventListener('click', searchProducts);
+
+      // Associate the searchProducts function with the 'keydown' event on the search input field
+      searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          searchProducts();
+        }
+      });
+
+      // Extract and execute search term from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search');
+      if (searchParam !== null) {
+        searchInput.value = decodeURIComponent(searchParam);
+        filterProducts(searchParam.trim());
+      }
+    });
+
+    function toggleCategories() {
+  const categoryList = document.querySelector(".category-list");
+  categoryList.style.display = categoryList.style.display === "block" ? "none" : "block";
+}
+
+
+
+  </script>
+  <script src="/ticker3.js"></script>
+  </body>
+  </html>

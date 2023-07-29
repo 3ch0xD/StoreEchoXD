@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Checkout Page</title>
   <!-- Add your CSS styles here -->
   <link rel="stylesheet" href="checkout.css">
   <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
 </head>
+
 <body>
 
   <div class="contact-ticker">
@@ -27,99 +29,99 @@
   </div>
 
   <div class="checkout">
-  
-  <form method="post" action="https://formsubmit.co/storeechoxd@gmail.com">
-    <label for="product">Product:</label><br>
-    <input type="text" id="product" name="product" readonly required><br>
-    
-    <label for="price">Price:</label><br>
-    <input type="text" id="price" name="price" readonly required><br>
 
-    <label for="name">Name:</label><br>
-    <input type="text" name="name" required><br>
+    <form method="post" action="https://formsubmit.co/storeechoxd@gmail.com">
+      <label for="product">Product:</label><br>
+      <input type="text" id="product" name="product" readonly required><br>
 
-    <label for="email">Email:</label><br>
-    <input type="email" name="email" required><br>
+      <label for="price">Price:</label><br>
+      <input type="text" id="price" name="price" readonly required><br>
 
-    <label for="phone">Phone Number:</label><br>
-    <input type="number" name="phone" required><br>
+      <label for="name">Name:</label><br>
+      <input type="text" name="name" required><br>
 
-    <label for="payment">Payment Method</label><br>
-    <select id="payment" name="payment" required>
-      <option value="" hidden disabled selected >Select Payment Method</option>
-      <option value="bank-transfer">Bank Transfer</option>
-      <option value="easypaisa">EasyPaisa</option>
-      <option value="jazzcash">Jazz Cash</option>
-    </select><br>
-    
-    <!-- MODIFICATIONS FOR FORM  -->
-    <input type="hidden" name="_next" value="https://echoxd.store/Thankyou/">
-    <input type="hidden" name="_captcha" value="false">
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" required><br>
 
-    
-    <!-- Add other input fields for email, name, phone number, etc. -->
-    
-    <button type="submit" onclick="validateSelection()">Submit</button>
-  </form>
-</div>
-<p id="payment-instructions"></p>
+      <label for="phone">Phone Number:</label><br>
+      <input type="number" name="phone" required><br>
+
+      <label for="payment">Payment Method</label><br>
+      <select id="payment" name="payment" required>
+        <option value="" hidden disabled selected>Select Payment Method</option>
+        <option value="bank-transfer">Bank Transfer</option>
+        <option value="easypaisa">EasyPaisa</option>
+        <option value="jazzcash">Jazz Cash</option>
+      </select><br>
+
+      <!-- MODIFICATIONS FOR FORM  -->
+      <input type="hidden" name="_next" value="https://echoxd.store/Thankyou/">
+      <input type="hidden" name="_captcha" value="false">
+
+
+      <!-- Add other input fields for email, name, phone number, etc. -->
+
+      <button type="submit" onclick="validateSelection()">Submit</button>
+    </form>
+  </div>
+  <p id="payment-instructions"></p>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
       const product = urlParams.get('product');
       const price = urlParams.get('price');
-      
+
       // Fill the input fields with the obtained product and price values
       document.getElementById('product').value = product || '';
       document.getElementById('price').value = price || '';
     });
 
     const ctickerContent = document.getElementById('cticker');
-const ctickerItem = ctickerContent.querySelector('li');
-const ctickerContainer = document.querySelector('.contact-ticker');
+    const ctickerItem = ctickerContent.querySelector('li');
+    const ctickerContainer = document.querySelector('.contact-ticker');
 
-const ctickerItemWidth = ctickerItem.offsetWidth;
-const ctickerContainerWidth = ctickerContainer.offsetWidth;
+    const ctickerItemWidth = ctickerItem.offsetWidth;
+    const ctickerContainerWidth = ctickerContainer.offsetWidth;
 
-// Duplicate the ticker item content
-ctickerContent.innerHTML += ctickerContent.innerHTML;
+    // Duplicate the ticker item content
+    ctickerContent.innerHTML += ctickerContent.innerHTML;
 
-// Set initial position of ticker
-let ctickerPosition = 0;
+    // Set initial position of ticker
+    let ctickerPosition = 0;
 
-function animateContactTicker() {
-  ctickerPosition += 1; // Adjust this value to control the scrolling speed
-  if (ctickerPosition >= ctickerItemWidth) {
-    ctickerPosition = 0;
-  }
+    function animateContactTicker() {
+      ctickerPosition += 1; // Adjust this value to control the scrolling speed
+      if (ctickerPosition >= ctickerItemWidth) {
+        ctickerPosition = 0;
+      }
 
-  ctickerContent.style.transform = `translateX(-${ctickerPosition}px)`;
+      ctickerContent.style.transform = `translateX(-${ctickerPosition}px)`;
 
-  requestAnimationFrame(animateContactTicker);
-}
+      requestAnimationFrame(animateContactTicker);
+    }
 
-// Start the animation
-animateContactTicker();
+    // Start the animation
+    animateContactTicker();
 
-document.getElementById('payment').addEventListener('change', function() {
-  var instructions = document.getElementById('payment-instructions');
-  switch(this.value) {
-    case 'bank-transfer':
-      instructions.textContent = 'You need to transfer the money to account number 03118165069 and send the screenshot at +9203002946303.';
-      break;
-    case 'easypaisa':
-      instructions.textContent = 'You need to transfer the money to EasyPaisa account number 03002946303 and send the screenshot at +9203002946303.';
-      break;
-    case 'jazzcash':
-      instructions.textContent = 'You need to transfer the money to Jazz Cash account number 03002946303 and send the screenshot at +9203002946303.';
-      break;
-    default:
-      instructions.textContent = '';
-  }
-});
+    document.getElementById('payment').addEventListener('change', function () {
+      var instructions = document.getElementById('payment-instructions');
+      switch (this.value) {
+        case 'bank-transfer':
+          instructions.textContent = 'You need to transfer the money to AccountHolderName: Uzma Amir AccountNumber: 03118165069 BankName: SadaPay and send the screenshot at +92 3118165069.';
+          break;
+        case 'easypaisa':
+          instructions.textContent = 'You need to transfer the money to EasyPaisa AccountHolderName: Uzma Amir AccountNumber: 03118165069 and send the screenshot at +92 3118165069.';
+          break;
+        case 'jazzcash':
+          instructions.textContent = 'You need to transfer the money to Jazz Cash AccountHolderName: Taha Aamir AccountNumber: 03118165069 and send the screenshot at +92 3118165069.';
+          break;
+        default:
+          instructions.textContent = '';
+      }
+    });
 
-function validateSelection() {
+    function validateSelection() {
       const selectField = document.getElementById("mySelect");
       const selectedOption = selectField.value;
 
@@ -138,5 +140,15 @@ function validateSelection() {
     }
 
   </script>
+  <!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+  window.__lc = window.__lc || {};
+  window.__lc.license = 15792132;
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/15792132/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
 </body>
+
 </html>

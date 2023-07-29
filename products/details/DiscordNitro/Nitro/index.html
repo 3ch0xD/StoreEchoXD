@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail | EchoXD.Store</title>
+  <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+  <!-- STYLESHEET  -->
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="/fonts.css">
+</head>
+
+<body>
+  <div class="main-content">
+    <img src="/Images/DiscordNitro.png" height="500px">
+    <h1>Discord Nitro 1month | Discord Delivery</h1>
+    <p>Discord Nitro 1month, Login is required in order to buy, dont worry its completely safe and a recording of us
+      signing out of your account will be sent to you</p>
+    <p2 class="p2">Pkr. 3200</p2><br>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productCards = document.querySelectorAll('.main-content');
+
+      productCards.forEach((productCard) => {
+        const buyNowButton = document.createElement('button');
+        const product = productCard.querySelector('h1').textContent;
+        const price = productCard.querySelector('p2').textContent;
+
+        buyNowButton.classList.add('buy-now');
+        buyNowButton.textContent = 'Buy Now';
+        buyNowButton.addEventListener('click', function () {
+          const checkoutUrl = `/checkout.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
+          window.open(checkoutUrl, '_blank');
+        });
+
+        productCard.appendChild(buyNowButton);
+      });
+    });
+  </script>
+</body>
+
+</html>
